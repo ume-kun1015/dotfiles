@@ -62,6 +62,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'w0rp/ale'
 
 call neobundle#end()
 
