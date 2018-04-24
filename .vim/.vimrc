@@ -1,25 +1,3 @@
-" NeoBundle Scripts---------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/Users/ryosuke.umeki/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('/Users/ryosuke.umeki/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-" Required:
-call neobundle#end()
-
 syntax on
 set nocompatible   " Use Vim defaults (much better!)
 set bs=2      " indent,eol,start
@@ -60,6 +38,11 @@ set termencoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis
 " autocmd FileType html :set  encoding=sjisi
 
+" NeoBundle Scripts---------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
@@ -70,14 +53,9 @@ endif
 "Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
 NeoBundle 'scrooloose/nerdtree'
-
-" You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
