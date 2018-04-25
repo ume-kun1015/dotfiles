@@ -63,12 +63,10 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'w0rp/ale'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 
 call neobundle#end()
-
-call plug#begin()
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-call plug#end()
 
 " Required:
 filetype plugin indent on
@@ -76,6 +74,10 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+call plug#end()
 
 "-----------------
 " key mapping
@@ -87,13 +89,16 @@ nnoremap <C-e>u :set encoding=utf-8 <Enter>
 nnoremap <C-e>e :set encoding=euc-jp <Enter>
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
+noremap <C-n> :NERDTree<CR>
+noremap! <C-n> :NERDTree<CR>
 
 set backspace=indent,eol,start
 "map! ^K ^[>>   " something for the mac...
 
-" 隠しファイルをデフォルトで表示させる
+"--------------------
+" NERDTree Settings
+" the property that shows all hidden files such as files that start with '.'
 let NERDTreeShowHidden = 1
 
-" デフォルトでツリーを表示させる
-autocmd VimEnter * execute 'NERDTree'
-
+" the command that lets NERDTree open at the first time vim gets started.
+" autocmd VimEnter * execute 'NERDTree'
