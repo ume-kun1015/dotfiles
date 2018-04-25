@@ -66,6 +66,10 @@ NeoBundle 'w0rp/ale'
 
 call neobundle#end()
 
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+call plug#end()
+
 " Required:
 filetype plugin indent on
 
