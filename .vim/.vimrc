@@ -65,7 +65,7 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'w0rp/ale'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-
+NeoBundle 'tpope/vim-fugitive'
 call neobundle#end()
 
 " Required:
@@ -89,16 +89,41 @@ nnoremap <C-e>u :set encoding=utf-8 <Enter>
 nnoremap <C-e>e :set encoding=euc-jp <Enter>
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
-noremap <C-n> :NERDTree<CR>
-noremap! <C-n> :NERDTree<CR>
 
 set backspace=indent,eol,start
 "map! ^K ^[>>   " something for the mac...
 
 "--------------------
 " NERDTree Settings
+"-------------------
+noremap <C-n> :NERDTree<CR>
+noremap! <C-n> :NERDTree<CR>
+
 " the property that shows all hidden files such as files that start with '.'
 let NERDTreeShowHidden = 1
 
 " the command that lets NERDTree open at the first time vim gets started.
 " autocmd VimEnter * execute 'NERDTree'
+
+" ------------------
+" Unite.vim Settings
+" ------------------
+" let g:unite_enable_start_insert=1
+" ファイル一覧
+noremap <C-f> :Unite -buffer-name=file file<CR>
+" 最近使ったファイルの一覧
+noremap <C-r> :Unite file_mru<CR>
+noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+" 検索一覧で並べられたファイルでcntl + Jと押すとウィンドウを横分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" 検索一覧で並べられたファイルでcntl + Kと押すとウィンドウを縦分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+
+" -----------------
+" Vim fugitive Settings
+" ---------------
+" grep検索の実行後にQuickFix Listを表示する
+autocmd QuickFixCmdPost *grep* cwindow
+
