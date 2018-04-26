@@ -8,14 +8,17 @@ set showmatch
 set whichwrap=b,s,h,l,<,>,[,]
 set hlsearch
 set viminfo='20,<1000,s10,h
+set noswapfile
 
 "------------------
 " mouse setting
-"set ttymouse=xterm2
+"-----------------
+""set ttymouse=xterm2
 "set mouse=a
 
 "------------------
 " tab setting default
+" ----------------
 set tabstop=4
 setlocal shiftwidth=4
 "set autoindent
@@ -23,6 +26,7 @@ setlocal shiftwidth=4
 
 "------------------
 " design
+" ----------------
 set listchars=tab:>\ ,extends:<
 set number
 highlight LineNr ctermfg=darkgrey
@@ -30,10 +34,12 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 "------------------
 " another settings
+" -----------------
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "------------------
 " encodes
+" ----------------
 set termencoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis
 " autocmd FileType html :set  encoding=sjisi
@@ -68,19 +74,23 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-fugitive'
 call neobundle#end()
 
-" Required:
+" Required: filetype プラグインによる indent を on にする
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+" --------------
+" plug manager
+" -------------
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call plug#end()
 
 "-----------------
 " key mapping
+" ---------------
 nnoremap <C-g> :! apachectl graceful <Enter>
 nnoremap <C-c>p :! php -l % <Enter>
 inoremap <C-d> error_log(“”);
@@ -89,6 +99,9 @@ nnoremap <C-e>u :set encoding=utf-8 <Enter>
 nnoremap <C-e>e :set encoding=euc-jp <Enter>
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
+nnoremap sv :<C-u>vs<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sw <C-w>w
 
 set backspace=indent,eol,start
 "map! ^K ^[>>   " something for the mac...
@@ -108,7 +121,7 @@ let NERDTreeShowHidden = 1
 " ------------------
 " Unite.vim Settings
 " ------------------
-" let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert=1
 " ファイル一覧
 noremap <C-f> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
