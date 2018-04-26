@@ -72,6 +72,7 @@ NeoBundle 'w0rp/ale'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 call neobundle#end()
 
 " Required: filetype プラグインによる indent を on にする
@@ -121,7 +122,7 @@ let NERDTreeShowHidden = 1
 " ------------------
 " Unite.vim Settings
 " ------------------
-let g:unite_enable_start_insert=1
+" let g:unite_enable_start_insert=1
 " ファイル一覧
 noremap <C-f> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
@@ -140,3 +141,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
+"------------------
+" Vim Gitgugger
+" ----------------
+set updatetime=250
