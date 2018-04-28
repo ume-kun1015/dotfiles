@@ -20,6 +20,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOENV_ROOT/bin:$PATH:$GOBIN
 eval "$(goenv init -)"
 
+alias vimgo='vim -u ~/.vimrc.go'
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+
 # PYTHON
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
@@ -33,29 +36,6 @@ export PATH=$PATH:~/.ecs-deploy
 
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
-
-#
-# search history
-function peco-select-history() {
-  local tac
-  if which tac > /dev/null; then
-      tac="tac"
-    else
-      tac="tail -r"
-    fi
-
-    BUFFER=$(\history -n 1 | eval $tac | peco)
-    CURSOR=$#BUFFER
-    zle clear-screen
-}
-
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-#
-
-
-
-
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -111,6 +91,21 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+function peco-select-history() {
+    BUFFER=$(\history 1 | \
+                    sort -r -k 2 |\
+                    uniq -1 | \
+                    sort -r | \
+                    awk '$1=$1' | \
+                    cut -d" " -f 2- | \
+                    peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 # User configuration
 
