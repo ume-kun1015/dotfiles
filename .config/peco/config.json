@@ -1,0 +1,9 @@
+{
+	"Keymap": {
+		"C-c": "peco.Cancel"
+	},
+	"Style": {
+		"Selected": ["bold", "on_green", "white"],
+		"Matched": ["white", "on_cyan"]
+	} 
+}
