@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ryosuke.umeki/.oh-my-zsh
 
@@ -32,8 +29,10 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
 
+# ECS-DEPLOY
 export PATH=$PATH:~/.ecs-deploy
 
+# AWS KEYS 
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
@@ -54,7 +53,7 @@ function peco-select-gitadd() {
 zle -N peco-select-gitadd
 bindkey '^g^a' peco-select-gitadd
 
-# peco-select-git-local-branch list local branches and let me search them 
+# peco-select-git-local-branch list local branches and let me search them
 function peco-git-local-branch(){
     local current_buffer=$BUFFER
 
@@ -65,15 +64,21 @@ function peco-git-local-branch(){
         CURSOR=$#BUFFER
     fi
 }
-zle -N peco-select-git-local-branch
-bindkey '^g^b' peco-select-git-local-branch
+zle -N peco-git-local-branch
+bindkey '^g^b' peco-git-local-branch
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# peco-ls list all files within the current directory.
+function peco-ls() {
+    local current_buffer=$BUFFER
+    local selected_lines="$(ls | peco | awk '{print $NF}')"
+
+    if [ -n "$selected_lines" ]; then
+        BUFFER="${current_buffer}$(echo "$selected_lines" | tr '\n' ' ')"
+        CURSOR=$#BUFFER
+    fi
+}
+zle -N peco-ls
+bindkey '^l^s' peco-ls
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -105,14 +110,6 @@ bindkey '^g^b' peco-select-git-local-branch
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -124,7 +121,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # peco setting
-
 # This setting should be here... I don't get any single clue of the reason...
 # peco-select-history list commands in history and let me search previous commands that I have executed
 function peco-select-history() {
@@ -142,33 +138,5 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
