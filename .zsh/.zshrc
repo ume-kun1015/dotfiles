@@ -37,7 +37,8 @@ AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
 # peco settings
-# peco-select-gitadd list files within any git project and let me search them. This even tells each file is whether modified or a new file.
+# peco-select-gitadd list files within any git project and let me search them.
+# This even tells each file is whether modified or a new file.
 function peco-select-gitadd() {
     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
                                   peco --query "$LBUFFER" | \
@@ -79,6 +80,22 @@ function peco-ls() {
 }
 zle -N peco-ls
 bindkey '^l^s' peco-ls
+
+# peco-select-tmux-session list all tmux sessions and let me search them
+function peco-select-tmux-session(){
+  if [ -n "$TMUX" ]; then
+    echo 'Do not use this command in a tmux session.'
+    return 1
+  fi
+
+  local session="$(tmux list-sessions | peco | cut -d : -f 1)"
+  if [ -n "$session" ]; then
+    BUFFER="tmux a -t $session"
+    zle accept-line
+  fi
+}
+zle -N peco-select-tmux-session
+bindkey '^t' peco-select-tmux-session
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
