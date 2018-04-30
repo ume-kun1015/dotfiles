@@ -28,6 +28,7 @@ eval "$(pyenv init -)"
 # NODE
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
+export PATH="$PATH:$HOME/npm/bin"
 
 # ECS-DEPLOY
 export PATH=$PATH:~/.ecs-deploy
