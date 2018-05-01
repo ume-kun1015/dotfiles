@@ -1,0 +1,48 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"3024 Color Scheme",
+		"3D Tool (Async Burst-Mode)",
+		"API Blueprint",
+		"Babel",
+		"Babel Snippets",
+		"Color Highlighter",
+		"Dockerfile Syntax Highlighting",
+		"GitGutter",
+		"GitHub Flavored Markdown Preview",
+		"GoSublime",
+		"Jade",
+		"Jade Snippets",
+		"JavaScript Completions",
+		"Kotlin",
+		"LESS",
+		"Markdown Preview",
+		"Material Theme",
+		"Package Control",
+		"Pug",
+		"React IDE",
+		"Riot Syntax",
+		"Riot Tag",
+		"Ruby Debugger",
+		"Sass",
+		"SASS Snippets",
+		"SFTP",
+		"ShellScriptImproved",
+		"SublimeLinter",
+		"SublimeLinter-golint",
+		"SublimeLinter-php",
+		"SublimeLinter-phplint",
+		"SublimeLinter-pylint",
+		"SublimeLinter-ruby",
+		"SummitLinter",
+		"Swift",
+		"Tagger Script Syntax",
+		"TOML",
+		"Vue Syntax Highlight"
+	]
+}
