@@ -9,6 +9,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 set hlsearch
 set viminfo='20,<1000,s10,h
 set noswapfile
+set title
 
 "------------------
 " mouse setting
@@ -73,6 +74,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-rails'
 call neobundle#end()
 
 " Required: filetype プラグインによる indent を on にする
@@ -145,3 +147,4 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Vim Gitgugger
 " ----------------
 set updatetime=250
+
