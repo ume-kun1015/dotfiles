@@ -76,6 +76,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'lepture/vim-jinja'
 call neobundle#end()
 
 " Required: filetype プラグインによる indent を on にする
