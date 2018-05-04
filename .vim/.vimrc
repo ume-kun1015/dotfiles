@@ -101,11 +101,18 @@ inoremap <C-d> error_log(“”);
 nnoremap <C-e>s :set encoding=sjis <Enter>
 nnoremap <C-e>u :set encoding=utf-8 <Enter>
 nnoremap <C-e>e :set encoding=euc-jp <Enter>
+" escをctrl-jで
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
+" svで縦分割 ssで横分割 swでパネル移動
 nnoremap sv :<C-u>vs<CR>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sw <C-w>w
+" 行頭、行末でジャンプ 
+nnoremap <C-h> ^
+vnoremap <C-h> ^
+nnoremap <C-l> $
+vnoremap <C-l> $
 
 set backspace=indent,eol,start
 "map! ^K ^[>>   " something for the mac...
