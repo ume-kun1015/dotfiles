@@ -78,6 +78,10 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'stephpy/vim-yaml'
 NeoBundle 'lepture/vim-jinja'
 NeoBundle 'shmup/vim-sql-syntax'
+NeoBundle 'mattn/vim-sqlfmt'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 call neobundle#end()
 
 " Required: filetype プラグインによる indent を on にする
@@ -146,6 +150,9 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split
 " 検索一覧で並べられたファイルでcntl + Kと押すとウィンドウを縦分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+
+" Markdown preview
+au BufRead,BufNewFile *.md set filetype=markdown
 
 " -----------------
 " Vim fugitive Settings
