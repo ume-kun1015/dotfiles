@@ -82,6 +82,15 @@ NeoBundle 'mattn/vim-sqlfmt'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'ain/vim-capistrano'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+NeoBundle 'roxma/vim-hug-neovim-rpc'
+NeoBundle 'kana/vim-submode'
+NeoBundle 'ekalinin/Dockerfile.vim'
 call neobundle#end()
 
 " Required: filetype プラグインによる indent を on にする
@@ -94,9 +103,12 @@ NeoBundleCheck
 " --------------
 " plug manager
 " -------------
-call plug#begin()
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-call plug#end()
+"set rtp+=~/.vim/bundle/Vundle.vim/
+"call plug#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"Plugin 'nsf/gocode', {'rtp': 'vim/'}
+"call plug#end()
 
 "-----------------
 " key mapping
