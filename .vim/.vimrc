@@ -123,6 +123,12 @@ vnoremap <C-l> $
 set backspace=indent,eol,start
 "map! ^K ^[>>   " something for the mac...
 
+" カレントウィンドウの大きさを変更する
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+
 "--------------------
 " NERDTree Settings
 "-------------------
