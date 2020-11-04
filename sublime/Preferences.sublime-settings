@@ -3,15 +3,19 @@
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 13,
+	"font_size": 12,
+	"hot_exit": false,
 	"ignored_packages":
 	[
+		"GoSublime",
 		"Vintage"
 	],
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"overlay_scroll_bars": "enabled",
+	"remember_open_files": false,
 	"tab_size": 2,
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
+
