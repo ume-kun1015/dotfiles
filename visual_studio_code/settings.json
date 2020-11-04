@@ -1,5 +1,33 @@
 {
-    "workbench.colorTheme": "Material Theme High Contrast",
+    "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "eq-material-theme-icons",
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "file",
+    "go.formatTool": "goimports",
+    "files.associations": {
+        "*.vue": "vue"
+    },
+    "eslint.validate": [
+        "javascript",
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+    ],
+    // "prettier.eslintIntegration": true,
+    // "prettier.stylelintIntegration": true,
+    "editor.codeActionsOnSave": {
+        // For ESLint
+        "source.fixAll.eslint": true,
+    },
+    // "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    // "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true
 }
+
