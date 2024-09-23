@@ -6,28 +6,40 @@
     "go.lintOnSave": "file",
     "go.formatTool": "goimports",
     "files.associations": {
-        "*.vue": "vue"
+      "*.vue": "vue"
     },
     "eslint.validate": [
-        "javascript",
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "vue",
-            "autoFix": true
-        },
+      "javascript",
+      {
+        "language": "typescript",
+        "autoFix": true
+      },
+      {
+        "language": "vue",
+        "autoFix": true
+      }
     ],
     // "prettier.eslintIntegration": true,
     // "prettier.stylelintIntegration": true,
     "editor.codeActionsOnSave": {
-        // For ESLint
-        "source.fixAll.eslint": true,
+      "source.fixAll.eslint": "explicit"
     },
-    // "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
-    // "editor.formatOnSave": true,
-    "eslint.autoFixOnSave": true
-}
-
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.inlineSuggest.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "[ruby]": {
+      "editor.formatOnSave": false,
+      "editor.customCodeActionMenu.showHeaders": false
+    },
+    "settingsSync.ignoredSettings": ["editor.defaultFormatter"],
+    "prisma.showPrismaDataPlatformNotification": false,
+    "prettier.requireConfig": true,
+    "typescript.updateImportsOnFileMove.enabled": "never"
+  }
